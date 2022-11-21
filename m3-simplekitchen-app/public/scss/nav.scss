@@ -1,27 +1,40 @@
 /* Nesting */
 
-
 /* SCSS */
 
 nav {
-    font: {
-        size: 1em;
-        font-weight: bold;
+  font: {
+    size: 1em;
+    font-weight: bold;
+  }
+  float: left;
+  ul {
+    list-style-type: none;
+    li {
+      float: left;
+      margin: 0 5px 0 0;
+      color: $color4;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        color: $color4;
+      }
     }
-    float: left;
-    ul {
-        list-style-type: none;
-        li {
-            float: left;
-            margin: 0 5px 0 0;
-            color: $color4;
-            a {
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-               }
-               color: $color4;
-           }
-       }
-   }
+  }
+  #register-cta {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: $color4;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
