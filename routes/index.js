@@ -11,8 +11,6 @@ const basic = auth.basic( {
 } );
 
 router.get( '/', ( req, res ) => {
-  // res.send( 'It works!' );
-  // res.render( 'form', { title: 'Registration form' } );
   res.render( 'index', { title: 'Simple Kitchen' } );
 } );
 
