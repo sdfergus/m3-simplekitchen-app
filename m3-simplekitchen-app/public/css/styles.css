@@ -37,6 +37,20 @@ header {
   width: 1350px;
   margin: 0.8em auto 1em auto;
 }
+header #register-cta {
+  float: right;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+header #register-cta a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+header #register-cta a:hover {
+  text-decoration: underline;
+}
 
 main {
   background: white;
@@ -88,5 +102,3 @@ button,
 .submit-buttton {
   border: 1px #313130;
 }
-
-/*# sourceMappingURL=styles.css.map */

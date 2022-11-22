@@ -23,18 +23,4 @@ nav {
       }
     }
   }
-  #register-cta {
-    float: right;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    a {
-      text-decoration: none;
-      font-weight: bold;
-      color: $color4;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }
