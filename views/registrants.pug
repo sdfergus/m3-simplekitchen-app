@@ -1,9 +1,11 @@
-extends layout
+//- extends layout
+link(rel="stylesheet", href="css/bootstrap.min.css")
+link(rel="stylesheet", href="css/form.css")
 
 block content
 
     if registrations.length
-        table.listing-table.table-dark.table-striped
+        table.listing-table.table-light
             tr
                 th Name
                 th Email

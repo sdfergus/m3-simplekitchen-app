@@ -11,14 +11,19 @@ const basic = auth.basic( {
 } );
 
 router.get( '/', ( req, res ) => {
-  //res.send('It works!');
-  res.render( 'form', { title: 'Registration form' } );
+  // res.send( 'It works!' );
+  // res.render( 'form', { title: 'Registration form' } );
+  res.render( 'index', { title: 'Simple Kitchen' } );
 } );
 
-router.get( '/registrations', basic.check( ( req, res ) => {
+router.get( '/register', ( req, res ) => {
+  res.render( 'register', { title: 'Register' } );
+} );
+
+router.get( '/registrants', basic.check( ( req, res ) => {
   Registration.find()
     .then( ( registrations ) => {
-      res.render( 'index', { title: 'Listing registrations', registrations } );
+      res.render( 'registrants', { title: 'Listed Registrants', registrations } );
     } )
     .catch( () => {
       res.send( 'Sorry! Something went wrong.' );
@@ -29,10 +34,10 @@ router.post( '/',
   [
     check( 'name' )
       .isLength( { min: 1 } )
-      .withMessage( 'Please enter a name' ),
+      .withMessage( '! Error : Please enter a name' ),
     check( 'email' )
       .isLength( { min: 1 } )
-      .withMessage( 'Please enter an email' ),
+      .withMessage( '! Error : Please enter an email' ),
   ],
   ( req, res ) => {
     //console.log(req.body);
@@ -40,14 +45,14 @@ router.post( '/',
     if ( errors.isEmpty() ) {
       const registration = new Registration( req.body );
       registration.save()
-        .then( () => { res.send( 'Thank you for your registration!' ); } )
+        .then( () => { res.render( 'thankyou', { title: 'Registration Complete' } ); } )
         .catch( ( err ) => {
           console.log( err );
           res.send( 'Sorry! Something went wrong.' );
         } );
     } else {
-      res.render( 'form', {
-        title: 'Registration form',
+      res.render( 'register', {
+        title: 'Register',
         errors: errors.array(),
         data: req.body,
       } );
