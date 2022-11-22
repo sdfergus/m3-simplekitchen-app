@@ -2,14 +2,13 @@ doctype html
 html
   head
     title= `${title}`
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='preconnect', href='https://fonts.gstatic.com')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap')
-    link(rel='stylesheet', href='css/styles.css')
-    script(src='script.js')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
+    link(rel='StyleSheet' href='css/styles.css' type='text/css')
+    block scripts
+      script(src='script.js')
 
   body
-    div.container.listing-reg
-      h1 My Amazing App
-
-      block content
+    block content
+    block foot
+      footer &copy; Copyright 2022
