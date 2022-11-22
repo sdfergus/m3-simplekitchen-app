@@ -7,7 +7,7 @@
     "lite": "lite-server",
     "watch": "nodemon ./start.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass -o m3-simplekitchen-app/public/css m3-simplekitchen-app/public/scss/styles.scss",
+    "scss": "node-sass -o public/css public/scss/styles.scss",
     "start": "npm run watch:all",
     "watch:scss": "onchange 'scss/*.scss' -- npm run scss",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite' "
