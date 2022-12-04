@@ -36,6 +36,12 @@ router.post( '/',
     check( 'email' )
       .isLength( { min: 1 } )
       .withMessage( '! Error : Please enter an email' ),
+    check( 'username' )
+      .isLength( { min: 1 } )
+      .withMessage( '! Error : Please enter a username' ),
+    check( 'password' )
+      .isLength( { min: 1 } )
+      .withMessage( '! Error : Please enter a password' ),
   ],
   ( req, res ) => {
     //console.log(req.body);
